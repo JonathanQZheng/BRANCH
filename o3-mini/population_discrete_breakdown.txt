@@ -1,0 +1,51 @@
+**Task**: Determine if self-disclosures can be broken down into multiple queries for better estimation.
+
+**Definition**:
+**Self-disclosure**: The act of intentionally sharing personal information about oneself with another person. This information is something that others generally wouldn't know without it being shared. Examples include static personal attributes such as name, age, and gender, or events an individual engages in over time, like health and education.
+
+**Instructions**:
+1. Review the following Google Search Query
+2. Reflect deeply and thoroughly on *ALL* of the aspects of the query and the ability to search these aspects online, and write down the specific/key (not general) IMPLICATIONS in a list format.
+3. Determine if the following queries CONTAINS TWO SEPARATE, DISCRETE disclosure spans in the CONDITIONAL CLAUSE (e.g. "THAT are CS or Economics", etc.).
+4. Discrete disclosure spans usually include the mention of the word "OR", where one disclosure is true or the other is true. If both or multiple are valid, then this is not a discrete disclosure span.
+5. **DO NOT BREAKDOWN** disclosure spans that are just lists separated by commas. These do not indicate that there is a hidden "OR" in the span.
+6. If there are two discrete spans, break down the query into **TWO** subqueries that can be added up to estimate the original query.
+7. If the query **DOES NOT** have discrete spans, then it cannot be estimated by breaking down the query. **RETURN** the original query in <list></list> tags.
+8. Otherwise, return the new queries in a list with <list></list> tags. Surround each query in <answer></answer> tags. Determine the mathematical operation needed to be used to combine the subqueries into the original query, and return this in <math></math> tags.
+
+**Example Query**:
+number of women studying electrical engineering at MIT
+
+**Example Answer**: This query is asking for the number of women studying electrical engineering at MIT. There are mentions of women and studying electrical engineering, but there is no "OR" that indicates one or the other is true. Thus, both are true, and there are no discrete disclosure spans. The query cannot be broken down.
+
+<list>
+<answer>number of women studying electrical engineering at MIT</answer>
+</list>
+
+**Example Query**:
+population of people living in Roswell or Atlanta
+
+**Example Answer**: This query is asking for the population of people living in Roswell or Atlanta. There is no word "that" in the clause, so this query is not a conditional query. There are mentions of living either in Roswell or Atlanta. Thus, one or the other may be valid. There are discrete disclosure spans, so this query can be broken down further into multiple subqueries.
+
+<list>
+<answer>population of people living in Roswell</answer>
+<answer>population of people living in Atlanta</answer>
+</list>
+
+<math>Addition</math>
+
+**Example Query**:
+number of tech workers that own their own homes and have a dog
+
+**Example Answer**: This query is asking for the number of tech workers that own their own homes and have a dog. There is a word "that" in the clause, so this is a conditional query. The conditional clause is "that own their own homes and have a dog." There are multiple different disclosure spans in the query, however all of them must be true as there is no mention of "OR". There are no indications that the disclosures are discrete, so this query cannot be broken down into multiple subqueries.
+
+<list>
+<answer>number of tech workers that own their own homes and have a dog</answer>
+</list>
+
+Please provide the implications with deep thinking, and determine if the query needs to be broken down into subqueries.
+
+**Query**:
+{query}
+
+**Answer**:

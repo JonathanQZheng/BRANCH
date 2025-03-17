@@ -1,0 +1,72 @@
+**Task**: Select the orderings of self-disclosures to estimate sequentially, using the conditional rule of probability.
+
+**Definition**:
+**Self-disclosure**: The act of intentionally sharing personal information about oneself with another person. This information is something that others generally wouldn't know without it being shared. Examples include static personal attributes such as name, age, and gender, or events an individual engages in over time, like health and education.
+
+**Instructions**:
+1. Carefully review the Reddit post, the list of self-disclosure spans, and their categories.
+2. Refer to the subreddit name for potential information that can help search the query.
+3. Reflect deeply and thoroughly on *ALL* of the individual disclosure spans, and write down the potential ways to estimate each self-disclosure span using online data and statistics in a list format.
+4. Based on your listed implications, determine an ordering to estimate the potential queries as a joint probability. That is, given self disclosures as random variables (e.g. A = 24 years old), determine an ordering A, B, C, D, such that the joint probability can easily be decomposed into conditional probabilities P(A) * P(B | A) * P(C | B, A) * P(D | C, B, A)
+5. Some guidelines for selecting the ordering are to select the self-disclosures that are the broadest/least specific first. For example, being a certain race or being employed is broader than disclosures about your education level or working at a specific company.
+6. Select **LOCATION** self-disclosures first, specifically disclosures that are locations of residence first, including locations that people are moving. Locations include cities, states, countries, **universities**, or general institutions (e.g. orphanage). 
+7. If the subreddit is an included location disclosure (e.g. a city or university), select the disclosure that includes the location name (including abbreviations and acronyms) **FIRST** over other location disclosures. If there are no other mentions of location disclosures, select the subreddit name as the disclosure **FIRST**. If a self-disclosure has the name of the subreddit within the text, **DO NOT** add a new self-disclosure span for the subreddit name. 
+8. Select self-disclosures that are personal attributes revolving around **ONLY** the user **FIRST**, such as **GENDER** or age or occupation. Do not order self-disclosures related to other people before these personal attributes, such as "relationship_status" or "family" self-disclosures.
+9. For relationship_status disclosures, order the self-disclosure about the romantic partner **FIRST** (e.g. wife, girlfriend, ex, partner) before ordering self-disclosures about other traits in the relationship (e.g. getting a divorce, being in a abusive household, etc.). 
+10. Select self-disclosures about one's own education **BEFORE** the occupation.
+11. Select disclosures based on the ease of searching the queries. For example, it is easier to search for P(male | 24 years old) than P(24 years old | male) since there are only two major categories to consider when estimating gender.
+12. Order disclosures based on causality. For instance, for health disclosures, select the disclosure that may cause the health symptoms, such as an illness or particular medication.
+13. Present the ordered disclosure spans **EXACTLY** as they are provided. **DO NOT** break up a disclosure span into multiple spans.
+14. Present this list in <list></list> tags, with each query surrounded by <answer></answer> tags, and each category surrounded by <type></type> tags. Make sure to include ALL queries.
+
+**Example Reddit Post**:
+I'm 24m and 3.72 GPA. Got in for Compsci for the class of 2028 at Virginia Tech in State . Also had 12 credits at a community college with a 4.0 from dual enrollment in high school(they get submitted and evaluated as college credits on the transfer app). I will be commuting with a car to campus this year.
+
+**Example Self-Disclosure Spans**:
+1. "Got in for Compsci.": education
+2. "Class of 2028": education
+3. "Virginia Tech in State": education
+4. "I will be commuting with a car": possessions
+5. "I'm 24m": age_gender
+
+**Example Subreddit**: virginiatech
+
+**Example Answer**: This user is at virginia tech in state, got into a school for "compsci", is in the class of 2028, is 24m, is from Richmond, and is commuting to campus with a car. The subreddit given is Virginia Tech, which is a university and a valid location. The self-disclosure "virginia tech in state" contains the subreddit name, so the subreddit does not need to be included. Because the subreddit is "virginiatech", "virginia tech in state" is the broadest and can be estimated first. Additionally, "class of 2028" is the next most broad, as it categorizes the grade level that students are in. The major "Compsci" of students can be easily estimated from statistics of virginia tech, and "24m" can be estimated afterwards as it is more specific. Finally, "commuting with a car" is the most specific query and can be estimated last. Thus, an ordering of the following disclosures is
+<list>
+1. <answer>Virginia Tech in state</answer>, <type>education</type>
+2. <answer>Class of 2028</answer>, <type>education</type>
+3. <answer>Got in for Compsci</answer>, <type>education</type>
+4. <answer>I'm 24m</answer>, <type>age_gender</type>
+5. <answer>I will be commuting with a car</answer>, <type>possessions</type>
+</list>
+
+**Example Reddit Post**:
+Meeting new people? 
+Finding activities/stuff to be part of? in good shape although I am currently suffering from double knee injuries so I can't do any running or long hiking type of stuff. Bored out of my fucking mind however. looking for activities to do with my girlfriend, we want to explore what's out there. Where it be events or concerts or anything. 
+I'm black btw. I just wanna know what to do for a guy in my shoes.
+
+**Example Self-Disclosure Spans**:
+1. "my girlfriend": relationship_status
+2. "i'm black btw": race
+3. "I am currently suffering from double knee injuries": health 
+
+**Example Subreddit**: relationship_status
+
+**Example Answer**: This user has a girlfriend, is black, and is suffering from double knee injuries. The subreddit given is relationship_status, which provides no additional location information. The self-disclosure "black" is the most easy to be estimated as it can be estimated broadly with census data. The self-disclosure "my girlfriend" can be estimated given the race of the user through online surveys. Finally, the self-disclosure of "suffering from double knee injuries" is the most specific and can be estimated last. Thus, an ordering of the following disclosures is
+<list>
+1. <answer>i'm black btw</answer>, <type>race</type>
+2. <answer>my girlfriend</answer>, <type>relationship_status</type>
+3. <answer>I am currently suffering from double knee injuries</answer>, <type>health </type>
+</list>
+
+Please provide the implications with deep thinking, and determine the proper ordering of disclosures.
+
+**Reddit Post**:
+{reddit_post}
+
+**Self-Disclosure Spans**:
+{self_disclosure_list}
+
+**Subreddit**: {subreddit}
+
+**Answer**:

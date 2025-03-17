@@ -1,0 +1,80 @@
+**Task**: Determine if the set of self-disclosures are conditionally independent.
+
+**Definition**:
+**Self-disclosure**: The act of intentionally sharing personal information about oneself with another person. This information is something that others generally wouldn't know without it being shared. Examples include static personal attributes such as name, age, and gender, or events an individual engages in over time, like health and education.
+
+**Instructions**:
+1. Carefully review the list of prior self-disclosure spans and their categories and the current self-disclosure span. Refer to the Reddit post to understand the meaning of the disclosures in context.
+2. For current self-disclosure span X, and prior self-disclosure spans A, B ..., consider the self-disclosure pairs (X, A), (X, B), ...
+3. Reflect deeply and thoroughly on *ALL* of the individual disclosure spans, and write down the specific/key (not general) IMPLICATIONS in a list format.
+4. Based on these implications, determine if the self-disclosure span X can be assumed to be conditionally independent to A without drastically affecting the distribution. That is, determine if P(X | A, [Z]) = P(X | [Z]), where [Z] is a set of other random variables to condition on.
+5. The prior self-disclosure span A is assumed to be conditionally independent if it does not drastically affect the distribution. Additionally, if removing the self-disclosure span as an assumption results in a probability that is MUCH easier to search up with online data and statistics, the span A is also assumed to be conditionally independent.
+6. On the other hand, a self-disclosure span is conditionally **DEPENDENT** if removing the conditional disclosure drastically changes the probability distribution. Examples of this include gender spans when conditioned on **OCCUPATION**, education spans when conditioned on **AGE**, race/nationality spans when conditioned on **INCOME LEVEL**. For location spans, if there are other location spans that are near the current location span, then the spans are **CONDITIONALLY DEPENDENT**. Account for these implications when deciding dependence.
+7. If the disclosure span is conditionally independent, then it is dropped from the conditional probability. 
+8. Present the conditionally dependent disclosure spans **EXACTLY** as they are provided. Do not break up a disclosure span into multiple spans. **DO NOT** include the current disclosure span in the list of prior self-disclosure spans.
+9. Return the prior SELF-DISCLOSURES SPANS that ARE NOT conditionally independent in <list></list> tags. Enclose the spans in <answer></answer> tags and the categories in <type></type> tags. 
+
+**Example Reddit Post**:
+I'm 24m and in State 3.72 GPA. Got in for Compsci at Virginia Tech. Also had 12 credits at a community college with a 4.0 from dual enrollment in high school(they get submitted and evaluated as college credits on the transfer app). I will be commuting with a car to campus this year.
+
+**Example Prior Self-Disclosure Span**:
+1. "Virginia Tech": location
+2. "Got in for Compsci.": education
+
+**Example Self-Disclosure Span**:
+"I'm 24m": age_gender
+
+**Example Answer**: This user is 24m, and they are also at Virginia Tech and study "compsci". Based on the prior self-disclosures, the age and gender distribution changes drastically if "virginia tech" is assumed to be conditionally independent, as the age and gender distribution at a university is drastically different from the national or global distribution of age and gender. Thus, "virginia tech" is not conditionally independent. The self-disclosure "got in for compsci" may affect the age and gender distribution slightly. However, it is much easier to estimate the age and gender distribution without conditioning on majors, as some schools may not provide the age and gender breakdown for specific majors online. Thus, it can be assumed that "compsci" is conditionally independent to "24m". Thus, the list of disclosures that are NOT conditionally independent are:
+
+<list>
+<answer>Virginia Tech</answer>, <type>education</type>
+</list>
+
+**Example Reddit Post**:
+Meeting new people? 
+Finding activities/stuff to be part of? in good shape although I am currently suffering from double knee injuries so I can't do any running or long hiking type of stuff. Bored out of my fucking mind however. looking for activities to do with my girlfriend, I bought a new car and we want to explore what to do in the city. Where it be events or concerts or anything. 
+I'm black btw. I just wanna know what to do for a guy in my shoes.
+
+**Example Prior Self-Disclosure Span**:
+1. "my girlfriend": location
+2. "I am currently suffering from double knee injuries": health
+3. "i'm black btw": race
+
+**Example Self-Disclosure Span**:
+"I bought a new car": possessions
+
+**Example Answer**: This user has a new car, and they also have a girlfriend, is suffering from double knee injuries, and is black. Based on the prior self-disclosures, having a girlfriend may slightly affect the distribution of buying and owning a new car. However, it is much easier to estimate car ownership rates without conditioning on relationship data. Thus, "my girlfriend" is assumed to be conditionally independent. "Currently suffering from double knee injuries" does not affect the car ownership rates, so this prior span is conditionally independent to the current span of possessing a car. Finally, racial background may affect car ownership rates, but it is not significant. Additionally, estimating car ownership rates without conditioning on race is much more feasible based on online data. Thus, "i'm black btw" is assumed to be conditionally independent. The list of disclosures that are NOT conditionally independent are:
+
+<list>
+NONE
+</list>
+
+**Example Reddit Post**:
+Hey everyone! I'm very excited to be moving to Sunnyvale! I work in IT and I have some questions about the work culture here. I also have some questions about finances. I bought a house so I do not have to worry about rent but I want to know what monthly spending costs are like. I'm looking forward to meeting people!
+
+**Example Prior Self-Disclosure Span**:
+1. "Sunnyvale": location
+2. "I work in IT": occupation
+
+**Example Self-Disclosure Span**:
+"I bought a house": possessions
+
+**Example Answer**: This user bought a house, and they also live in Sunnyvale and work in IT. Based on the prior self-disclosures, home ownership rates are affected by the city and state that you live in. Additionally, the city and state has statistics for home ownership, so it is easy to estimate the percentage of people that own a house, given that they live in Sunnyvale. Thus, "Sunnyvale" is not conditionally independent. "I work in IT" affects the amount of money someone makes, and this financial situation affects the home ownership rates. As such, conditioning on the occupation of "IT" affects home ownership rates, and "I work in IT" is not conditionally independent. The list of disclosures that are not conditionally independent are:
+
+<list>
+<answer>Sunnyvale</answer>, <type>location</type>
+<answer>I work in IT</answer>, <type>occupation</type>
+</list>
+
+Please provide the implications with deep thinking, and determine the proper conditional independence assumptions of the self-disclosures.
+
+**Reddit Post**:
+{reddit_post}
+
+**Prior Self-Disclosure Spans**:
+{prior_disclosure_list}
+
+**Self-Disclosure Span**:
+{self_disclosure_span}
+
+**Answer**: 

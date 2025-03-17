@@ -1,0 +1,63 @@
+**Task**: Determine if education self-disclosures can be broken down into multiple queries for better estimation.
+
+**Definition**:
+**Self-disclosure**: The act of intentionally sharing personal information about oneself with another person. This information is something that others generally wouldn't know without it being shared. Examples include static personal attributes such as name, age, and gender, or events an individual engages in over time, like health and education.
+
+**Instructions**:
+1. Review the following Google Search Query
+2. Reflect deeply and thoroughly on *ALL* of the aspects of the query and the ability to search these aspects online, and write down the specific/key (not general) IMPLICATIONS in a list format.
+3. Determine if the following education status query references the year that someone is in school (e.g. first-year, second-year, sophomore, junior, senior, new student, etc.).
+4. If this exists, break down the query into **TWO** subqueries that divides the number of **YEARS** that someone is in school. Do not estimate the time in months, days, weeks, etc. Only Estimate time in **YEARS**.
+5. This can be done by creating the first query for broad education statistics. For example, the disclosure "Harvard senior in CS" can be generalized to the number of students at Harvard that are in CS.
+6. Then, specify the number of years to divide this by. You can estimate this with the expected number of years that someone is at school at Harvard. Dividing the query by this number will provide an estimate to the percentage of people that are studying CS in a single year, i.e. third-year. 
+7. If the query **DOES NOT** have a mention of the year that someone is in school, then it cannot be estimated by breaking down the following query. **RETURN** the original query in <list></list> tags.
+8. Otherwise, return the new queries in a list with <list></list> tags. Surround each query in <answer></answer> tags. Determine the mathematical operation needed to be used to combine the subqueries into the original query, and return this in <math></math> tags.
+
+**Example Query**:
+number of people studying electrical engineering at MIT
+
+**Example Answer**: This query is asking for the number of people studying electrical engineering at MIT. There is no mention of a year that someone is in school of a partner, so this query cannot be broken down further into multiple subqueries.
+
+<list>
+<answer>number of people studying electrical engineering at MIT</answer>
+</list>
+
+**Example Query**:
+number of students that get an internship at a UW
+
+**Example Answer**: This query is asking for the number of students that get an internship at a UW. There is no mention of a specific year that someone is in school, so this query cannot be broken down further into multiple subqueries.
+
+<list>
+<answer>number of students that get an internship at a UW</answer>
+</list>
+
+**Example Query**:
+number of new students at MIT
+
+**Example Answer**: This query is asking for the number of new students at MIT. Based on online data at universities, it is easier to estimate the total number of students at a university, and then dividing this number by the average number of years it takes to graduate at that university. Thus, this query can be decomposed into subqueries. To combine the queries, division is used.
+
+<list>
+<answer>number of total students at MIT</answer>
+<answer>average number of years it takes to graduate at MIT</answer>
+</list>
+
+<math>Division</math>
+
+**Example Query**:
+number of UCLA sophomores studying communications
+
+**Example Answer**: This query is asking for the number of UCLA sophomores studying communications. Based on online data at universities, it is easier to estimate the total number of students at a university, and then dividing this number by the average number of years it takes to graduate at that university. Thus, it is easier to estimate the more general query of students studying communications, and dividing this result by the number of years to graduate at UCLA. Thus, this query can be decomposed into subqueries. To combine the queries, division is used.
+
+<list>
+<answer>number of UCLA students studying communications</answer>
+<answer>average number of years it takes to graduate at UCLA</answer>
+</list>
+
+<math>Division</math>
+
+Please provide the implications with deep thinking, and determine if the query needs to be broken down into subqueries.
+
+**Query**:
+{query}
+
+**Answer**:

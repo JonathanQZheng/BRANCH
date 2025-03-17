@@ -1,0 +1,73 @@
+**Task**: Determine the set of self-disclosures that are able to be estimated online.
+
+**Definition**:
+**Self-disclosure**: The act of intentionally sharing personal information about oneself with another person. This information is something that others generally wouldn't know without it being shared. Examples include static personal attributes such as name, age, and gender, or events an individual engages in over time, like health and education.
+
+**Instructions**:
+1. Carefully review the post, the list of self-disclosure spans and their categories.
+2. Refer to the subreddit name for potential information that can help search the query.
+3. The subreddit name is also sometimes a self-disclosure, as it may indicate a location or personal attribute, such as gender. Include the subreddit as a self-disclosure if it is a location subreddit and it is not mentioned in **ANY** self-disclosure spans. Or, if the subreddit indicates a personal attribute and does not contradict with the post, include this as a valid, searchable self-disclosure span. A contradiction would be if the reddit user mentions explicitly another location or alternative personal attribute that goes against the norm of the subreddit.
+4. Reflect deeply and thoroughly on *ALL* of the individual disclosure spans, and write down the specific/key (not general) IMPLICATIONS in a list format consistent with the post.
+5. Determine which disclosure spans are able to be estimated using trustworthy online statistics and data. Examples of trustworthy surveys are surveys conducted by an official government body, university student organization (e.g. student council), or university body. Other surveys that are trustworthy include disclosures about demographics (black, white, etc.), religion (christian, muslim, etc.), relationships (dating, married, single, just broke up), sexual harassment, abortion, reproductive health, and mental health/psychology.
+6. Include self-disclosures that mention **OTHER PEOPLE**. Examples include partners, children, etc.
+7. Include self-disclosures about locations that users **FREQUENT**, such as stores, coffee shops, etc.
+8. If the listed implications can be estimated instead of the exact disclosure span itself, then include these disclosure spans. These listed implications can be about someone's financial situation, parenthood, possession ownership, relationship status, general education, health, age ranges, etc. Include these disclosure spans if the implications are in these categories.
+9. Present this list in <list></list> tags. EACH **self-disclosure** is surrounded by <answer></answer> tags, and the corresponding **DISCLOSURE CATEGORY** is surrounded by <type></type> tags.
+10. If a user is planning on doing something, consider the disclosure to be valid as if the user is doing it. That is, include self disclosure spans that have a degree of uncertainty.
+11. **DO NOT** select duplicate disclosures. That is, if two disclosure spans convey the same information but are written slightly differently, **DO NOT** include both disclosures.
+12. **DO NOT** change the text of the disclosure spans. Return the disclosure spans **EXACTLY AS IS**.
+
+**Example Reddit Post**:
+I'm currently having a hard time. I'm 24m and in State 3.72 GPA. Got in for Compsci. Also had 12 credits at a community college with a 4.0 from dual enrollment in high school(they get submitted and evaluated as college credits on the transfer app). I will be commuting with a car to campus this year.
+
+**Example Self-Disclosure Span**:
+1. "Got in for Compsci.": education
+2. "I'm 24m": age_gender
+3. "I will be commuting with a Ford 150": possessions
+4. "Virginia Tech": education
+5. "I'm currently having a hard time.": mental_health
+
+**Example Subreddit**: virginiatech
+
+**Example Answer**: This user is having a hard time, got into a school for "compsci"ù, is 24m, and is commuting to campus with a car. The subreddit given is Virginia Tech, which is a university and a valid location. The user is studying computer science, which is estimatable based on online statistics of university data. The user is 24m, which can be estimated with census data. The user also owns a car, which can be estimated with online data. Virginia Tech is also a location and is estimatable. The user is having a hard time related to his mental health. This span implies that the user is having mental health struggles, such as anxiety and depression. Based on these implications, there is data online about depression and anxiety rates, so this disclosure can be estimated. Thus, the list of disclosures that can be estimated is
+<list>
+<answer>Got in for Compsci</answer>, <type>education</type>
+<answer>I'm 24m</answer>, <type>age_gender</type>
+<answer>Virginia Tech</answer>, <type>education</type>
+<answer>I'm currently having a hard time.</answer>, <type>mental_health</type>
+</list>
+
+**Example Reddit Post**:
+Meeting new people? 
+Finding activities/stuff to be part of? in good shape although I am currently suffering from double knee injuries so I can't do any running or long hiking type of stuff. Bored out of my fucking mind however. looking for activities to do with my girlfriend, we want to explore what's out there. Where it be events or concerts or anything. I'm black btw. We can hang at my place but my landlady is a bit of an ass.
+I just wanna know what's in Sunnyvale to do for a guy in my shoes.
+
+**Example Self-Disclosure Span**:
+1. "my girlfriend": relationship_status
+2. "i'm black btw": race
+3. "I am currently suffering from double knee injuries": health 
+4. "in Sunnyvale": location
+5. "my landlady": possessions
+
+**Example Subreddit**: Sunnyvale
+
+**Example Answer**: This user has a girlfriend, is black, and is suffering from double knee injuries. The user also has a landlady. The subreddit given is Sunnyvale, which is a city. The user has a girlfriend, which is estimatable based on online surveys of relationship statuses in the city and country. The user is black, which can be estimated with census data. The user is suffering from double knee injuries, which cannot be estimated with online data as there are no specific data for this type of medical injury. The user also has a landlady. While there are no online statistics about having landladies, this disclosure span implies that the user does not own a home, but rather pays rent to a landlady. There is online statistics about percentage of people that are renters or pay rent, so the implication can be estimated. Thus, the list of disclosures that can be estimated is
+
+<list>
+<answer>my girlfriend</answer>, <type>relationship_status</type>
+<answer>i'm black btw</answer>, <type>race</type>
+<answer>in Sunnyvale</answer>, <type>location</type>
+<answer>my landlady</answer>, <type>possessions</type>
+</list>
+
+Please provide the implications with deep thinking, and select the set of disclosures with estimatable implications, such as age of family members or moving to town.. YOU MUST ONLY SELECT DISCLOSURES THAT CAN BE ESTIMATED. Be more conservative in your selection.
+
+**Reddit Post**:
+{reddit_post}
+
+**Self-Disclosure Span**:
+{self_disclosure_list}
+
+**Subreddit**: {subreddit}
+
+**Answer**: 

@@ -1,0 +1,75 @@
+**Task**: Return a statement about the k-anonymity estimate of a person.
+
+**Definition**:
+**Self-disclosure**: The act of intentionally sharing personal information about oneself with another person. This information is something that others generally wouldn't know without it being shared. Examples include static personal attributes such as name, age, and gender, or events an individual engages in over time, like health and education.
+
+**k-anonymity**: Represents the number of people who possess that specific attribute or are in that specific situation. The number should be estimate  how many people have the following characteristics.
+
+**Instructions**:
+1. Review the included disclosure spans and the k-number estimate.
+2. Then, review the disclosure spans that are not included. 
+3. Formulate a paragraph explaining the k-number estimate, and which disclosure-spans it used to calculate this result. Then, list out the disclosure-spans that are not included and explain how these characters are difficult to estimate, but may still reduce the k-anonymity number.
+4. Provide some recommendations based on how low the k-anonymity number is. As a reminder, a low k-anonymity number means there are very few people that share these traits, meaning that there is a higher privacy risk. Any number between 100-999 is noteworthy, any number between 11-99 is very concerning, and any number under 10 is extremely concerning as a privacy risk.
+4. Return your answer in <answer></answer> tags.
+
+**Example k-number estimate**:
+63
+
+**Example included disclosure spans**:
+1. 48m
+2. live in Cheyenne
+3. single
+4. own a cat
+
+**Example excluded disclosure spans**:
+1. I am suffering from double knee injuries.
+2. I would love to go to some Spanish lessons with people
+
+**Example Answer**:
+<answer>
+Your k-anonymity number is 63, based on your disclosures of being 48m, living in Cheyenne, being single, and owning a cat. Additionally, the following disclosures are not factored into this calculation, as they are more difficult to estimate:
+
+1. I am suffering from double knee injuries.
+2. I would love to go to some Spanish lessons with people
+
+However, these disclosures may reduce the k-anonymity number further. Your k-anonymity number is largely concerning, as there is a big privacy risk of revealing all of these disclosures jointly. To reduce the potential privacy risk of sharing this information, you could:
+
+1. change 48 to late 40s for age.
+2. remove the information of being single.
+</answer>
+
+**Example k-number estimate**:
+1140
+
+**Example included disclosure spans**:
+1. undergraduate student
+2. Computer Science
+3. at Georgia Tech
+4. in state
+
+**Example excluded disclosure spans**:
+1. I love going on hikes
+2. I play the saxophone
+3. I am going to a wedding soon
+
+**Example Answer**:
+<answer>
+Your k-anonymity number is 1140, based on your disclosures of being an undergraduate student, studying Computer Science, being at Georgia Tech, and being in-state. Additionally, the following disclosures are not factored into this calculation, as they are more difficult to estimate:
+
+1. I love going on hikes
+2. I play the saxophone
+3. I am going to a wedding soon
+
+However, these disclosures may reduce the k-anonymity number further. Your k-anonymity number is not super concerning, as there are an estimated 1140 people that share these traits.
+</answer>
+
+**k-number estimate**:
+{k_number}
+
+**Included disclosure spans**:
+{included_list}
+
+**Excluded disclosure spans**:
+{excluded_list}
+
+**Answer**:

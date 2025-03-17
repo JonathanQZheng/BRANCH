@@ -1,0 +1,51 @@
+**Task**: You are an expert on recognizing incorrect information. Determine if the answer to a query is roughly correct.
+
+**Definition**:
+**Self-disclosure**: The act of intentionally sharing personal information about oneself with another person. This information is something that others generally wouldn't know without it being shared. Examples include static personal attributes such as name, age, and gender, or events an individual engages in over time, like health and education.
+
+**Instructions**:
+1. Review the Google Search Query
+2. Review the answer to the Search Query
+3. This answer is produced by an arbitrary large language model, and it is not certain that the answer is accurate.
+4. Using historic statistics and analogous data, determine if the provided answer to the query is correct or not.
+5. Provide your reasoning as to why the answer is likely to be correct or not. 
+6. Return your decision, "Yes" or "No" in <answer></answer> tags based on if the answer trustworthy. Only provide "No" if it is very likely that the estimate is incorrect.
+
+**Example Query**:
+percentage of people at Georgia Tech that are studying computer science
+
+**Example Answer**: 0.13
+
+**Example Evaluation**: The percentage of people at Georgia Tech that are studying computer science is supposedly 13% Georgia Tech offers over 100 undergraduate majors. Given that the school is more STEM-focused, computer science tends to be a more popular major than other majors at Georgia Tech. However, based on historic enrollment statistics and the diversity of the majors offered, the percentage that people study one major never exceeds over 15%, even for the most popular majors. Thus, the example answer is 13%, which is consistent with historic enrollment data. <answer>Yes</answer>
+
+**Example Query**:
+percentage of people at in Sunnyvale who are married that have two kids 
+
+**Example Answer**: 0.75
+
+**Example Evaluation**: The percentage of people at in Sunnyvale who are married that have two kids is supposedly 75%. Based on historic data, the average number of children that families have is around 1.9 kids. However, this does not include single people or children, as they do not count as a kid. The percentage of people who have two kids would be lower. While this may be a national statistic, the trend is roughly similar based on Sunnyvale. Thus, the percentage of people that have two kids is much lower than 75%. <answer>No</answer>
+
+**Example Query**:
+percentage of people at Georgia Tech that are taking a gap semester 
+
+**Example Answer**: 0.30
+
+**Example Evaluation**: The percentage of people at Georgia Tech that are taking a gap semester is supposedly 30%. Based on historic data, few people take a gap semester during their time in university. In fact, the national average tends to hover between 3-5%. Thus, even though Georgia Tech is a harder school, the rate of people that take a gap semester might be higher, but not as high as 30%. Thus, the percentage of people at Georgia Tech that are taking a gap semester is likely lower than 75%. <answer>No</answer>
+
+**Example Query**:
+percentage of 30 year old people in Sunnyvale that are men 
+
+**Example Answer**: 0.56
+
+**Example Evaluation**: The percentage of 30 year old people in Sunnyvale that are men is supposedly 56%. Based on the gender distribution, the percentage of people that are men or women tends to hover around 50%. However, other factors may affect this distribution, such as the job market and recent migration patterns. For Sunnyvale, the city is dominated by jobs in technology, which is male dominated. Thus, it is natural that the percentage of people in Sunnyvale that are men is slightly higher than 56%. <answer>Yes</answer>
+
+Take a deep breath, and consider the query and answer carefully. Explain your thoughts.
+
+**Query**:
+{query}
+
+**Answer**: {answer}
+
+**Evaluation**: 
+
+

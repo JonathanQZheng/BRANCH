@@ -1,0 +1,45 @@
+**Task**: Break down queries about age self-disclosures into multiple queries for better estimation.
+
+**Definition**:
+**Self-disclosure**: The act of intentionally sharing personal information about oneself with another person. This information is something that others generally wouldn't know without it being shared. Examples include static personal attributes such as name, age, and gender, or events an individual engages in over time, like health and education.
+
+**Instructions**:
+1. Review the following Google Search Query
+2. Reflect deeply and thoroughly on *ALL* of the aspects of the query and the ability to search these aspects online, and write down the specific/key (not general) IMPLICATIONS in a list format.
+3. Based on your listed implications, determine if the following age query can be broken down into multiple subqueries based on online statistics and data. 
+4. A query can be SEPARATED ONLY IF the it can be estimated with an age range. Census data reports ages in ranges (e.g. 30-34), so this can be simplified by estimating the percentage of people within this age range. 
+5. If a query can be separated, the second query should ask for the number of years in that age range, such that dividing the percentage of people within this age range by the number of years in the age range provides a uniform estimate for the percentage of people in a single year.
+6. If the query cannot be estimated by simplifying the query, **RETURN** the original query in <query></query> tags.
+7. Otherwise, return the new queries in <list></list> tags. Determine the mathematical operation needed to be used to combine the subqueries into the original query, and return this in <math></math> tags.
+
+**Example Query**:
+percentage of people in Sunnyvale that are 24 year olds
+
+**Example Answer**: This query is asking for the percentage of 24 year olds that are in Sunnyvale. Based on US CENSUS data, population ages are estimated by age ranges. Thus, it is easier to estimate the percentage of people that are 20-24 years old in Sunnyvale. This query can be broken down into subqueries. To combine the queries for estimation, dividing 20-24 years old by the number of years in this range can provide a uniform estimate of 24 years old.
+
+<list>
+<answer>percentage of people in Sunnyvale THAT are 20-24 year olds</answer>
+<answer>number of years in the 20-24 age range</answer>
+</list>
+
+<math>Division</math>
+
+**Example Query**:
+percentage of people in Cheyenne that are 33m
+
+**Example Answer**: This query is asking for the percentage of 33 year olds males that are in Cheyenne. Based on US CENSUS data, population ages are estimated by age ranges. Thus, it is easier to estimate the percentage of 30-39 years old males in Cheyenne. This query can be broken down into subqueries. To combine the queries for estimation, dividing 30-39 years old by the number of years in this range can provide a uniform estimate of 33 years old.
+
+<list>
+<answer>percentage of people in Cheyenne THAT are 30-39 year olds males</answer>
+<answer>number of years in the 30-39 age range</answer>
+</list>
+
+<math>Division</math>
+
+
+Please provide the implications with deep thinking, and determine if the query needs to be broken down into subqueries.
+
+**Query**:
+{query}
+
+**Answer**:

@@ -1,0 +1,49 @@
+**Task**: Determine if the following self-disclosure spans can be broken down into multiple spans for better estimation.
+
+**Definition**:
+**Self-disclosure**: The act of intentionally sharing personal information about oneself with another person. This information is something that others generally wouldn't know without it being shared. Examples include static personal attributes such as name, age, and gender, or events an individual engages in over time, like health and education.
+
+**Instructions**:
+1. Review the following self-disclosure spans.
+2. Reflect deeply and thoroughly on *ALL* of the aspects of the disclosure spans and the ability to search these aspects online, and write down the specific/key (not general) IMPLICATIONS in a list format.
+3. Based on your listed implications, determine if it is easier to estimate the disclosure span by breaking it down into multiple subqueries based on online statistics and data. 
+4. The self-disclosure spans can be SEPARATED ONLY IF the self-disclosures contain **MULTIPLE** discrete or separate events.
+5. If the query cannot be estimated by simplifying the query, **RETURN** the original span in <list></list> tags. 
+6. Otherwise, return the new queries in <list></list> tags. Determine the mathematical operation needed to be used to combine the subqueries into the original query, and return this in <math></math> tags.
+
+**Example Query**:
+black
+
+**Example Answer**: This self-disclosure is about racial demographics. There is only one variable being estimated, so the self-disclosure span cannot be broken down into self-disclosure spans.
+
+<list>
+<answer>black</answer>
+</list>
+
+**Example Query**:
+own a car
+
+**Example Answer**: This self-disclosure is about owning a car. There is only one variable being estimated, so the self-disclosure span cannot be broken down into self-disclosure spans.
+
+<list>
+<answer>own a car</answer>
+</list>
+
+**Example Query**:
+studying computer science or chemistry
+
+**Example Answer**: This self-disclosure is about students studying computer science or chemistry. Due to the usage of "or" in the query, these two points are discrete, as the student is not studying both majors. Thus, this can be broken down into multiple self-disclosure spans about students studying one major. 
+
+<query>
+<answer>studying chemistry</answer>
+<answer>studying computer science</answer>
+</query>
+
+<math>Addition</math>
+
+Please provide the implications with deep thinking, and determine if the query needs to be broken down into subqueries.
+
+**Query**:
+{query}
+
+**Answer**:

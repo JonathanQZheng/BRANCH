@@ -1,0 +1,106 @@
+ **Task**: Generate a Google search query to determine the k-anonymity of a specific self-disclosure span.
+
+**Definition**:
+**Self-disclosure**: The act of intentionally sharing personal information about oneself with another person. This information is something that others generally wouldn't know without it being shared. Examples include static personal attributes such as name, age, and gender, or events an individual engages in over time, like health and education.
+Note: only information about the person posting (the "poster") is considered self-disclosure. Information about others is EXCLUDED.
+
+**k-anonymity**: Represents the number of people who possess that specific attribute or are in that specific situation. The generated search query should be aimed at understanding how many people have that particular characteristic, rather than a direct search of the span itself.
+
+**Instructions**:
+1. Carefully review the current Self-Disclosure Span(s) about the USER/POSTER. If the current self-disclosure spans are separated by commas, then there are multiple current disclosure spans to estimate.
+2. Then, review the dependent prior Self-Disclosure Spans and the prior generated queries.
+3. Refer to the span category for clarity and additional contextual information.
+4. Refer to the subreddit name for potential information. If the subreddit is a location (i.e. a city or university), note this and use it in the query as a population of interest. 
+5. For all other subreddits, assume that the population of interest is the US national population or the population of English speakers as a first language. If a prior self-disclosure span is a subreddit name that is not a university or city, continue to use the United States as the population of interest.
+6. Reflect deeply and thoroughly on *ALL* the information of the disclosure span implies for the poster, and write down the generalizable IMPLICATIONS in a list format. Implications are user traits or concrete, estimatable events, not **SUBJECTIVE** thoughts, concerns, or opinions on a subject. If the current self-disclosure span describes an ongoing action (such as ‘looking for’), determine and list the underlying static trait or status.
+7. Based on your listed implications, formulate an accurate, new Google search query to yield the PERCENTAGE of PEOPLE sharing the prior self-disclosure spans THAT also have share attributes of the current self-disclosure span. Include the location information given. Present this query within <query></query> tags. This query must include new information from the prior generated queries. Do not generate redundant queries that have no new information from the list of prior generated queries.
+8. If a current disclosure span consists of a comma separated list, estimate the key implications of each self-disclosure span.
+9. Note that the query includes the implications of the disclosure span rather than the exact text of the disclosure span if the implications are **EASIER** to estimate than the specific query itself. These implications tend to be broad statistical categories that can be EASILY estimated online, such as housing or financial status.
+10. Examples of these include financial situation (implication: low income, medium income), housing (implication: owning a house, paying rent, etc.), parenthood, possession ownership, general education (implication: in school --> enrolled in college, implication: failing classes --> doing poorly), health, age ranges, employment status (e.g. estimate unemployment instead of job stability, estimate employment instead of working at a job), pet ownership (estimate general percentage of pet ownership instead of specific pet breeds) etc. These implications must be objective (i.e. something that has occurred to a user OR a user's trait). When a disclosure describes an active behavior (e.g. ‘actively looking for …’), use the generalized attribute in the query in order to produce a general estimate rather than one that only applies to active search behavior. 
+11. For medical disclosures, create queries about the percentage of people that **HAVE** a symptom, condition, injury, etc. Do not create queries about the diagnoses.
+12. The structure of the query must be **<prior disclosures> THAT <current disclosure implications>**. The disclosures that occur after the "THAT" clause are ONLY the current self-disclosure spans. Put the current self-disclosure spans after the "THAT" keyword. Replace any action-oriented language with the corresponding static characteristic.
+13. **DO NOT** create queries in the following manner: Percentage of people <current disclosure implication(s)> **AND** <prior disclosures>. YOU MUST FORMULATE THE QUERIES TO RESEMBLE CONDITIONAL PROBABILITIES.
+14. If there are no **<prior disclosures>**, then the query must be formulated as **percentage of **PEOPLE** in the united states THAT <current disclosure implications>**. Do not use any other population group, you must use **PEOPLE** to refer to the general population.
+15. Create queries about these self-disclosures objectively, as these disclosures are THINGS that happened to a user (e.g. going to an event) OR is a user trait.
+16. Create queries that are able to be searched up online with statistics. This means that you must generalize some **SPECIFIC** disclosure spans.
+17. **DO NOT** create subjective queries about the percentage of people  **HAVING AN OPINION** or **BEING CONCERNED** about something, unless **explicitly** mentioned in the span.
+
+**Example Prior Queries**:
+1. number of total students at Virginia Tech
+2. percentage of students that are undergraduate students
+3. percentage of students that are 24 years old
+
+**Example Dependent Prior Self-Disclosure Spans**:
+I'm a 24 year old: age
+
+**Example Current Self-Disclosure Span**:
+"Got in for undergrad Compsci."
+
+**Example Span Category**: education
+**Example Subreddit**: virginiatech
+
+**Example Answer**: This user got into a school for "compsci" as an undergrad, which is short for computer science. Looking at the span category, the user is pursuing education. The subreddit given is Virginia Tech, which is a university and a valid location. Based on the prior disclosures, the user is a 24 year old. There are no implications for the disclosure, as online data has statistics for age. Looking at the prior queries, undergraduate students is ALREADY MENTIONED, so this should be left out in the current query to remove redundancy. Thus, the user is a 24 student studying Computer science at Virginia Tech. 
+<query>percentage of 24 year old Virginia Tech students THAT are studying computer science</query>
+
+**Example Prior Queries**:
+1. population of Sunnyvale
+2. percentage of people that are in a relationship
+3. percentage of people in Sunnyvale that are black
+
+**Example Dependent Prior Self-Disclosure Spans**:
+"my girlfriend": relationship_status
+"i'm black btw": race
+
+**Example Current Self-Disclosure Span**:
+"23 years old, i'm male"
+
+**Example Span Category**: age_gender
+**Example Subreddit**: Sunnyvale
+
+**Example Answer**: This user discloses that he is 23 years old and male. Looking at the span category, he is disclosing his age and gender. The subreddit is Sunnyvale, which is a valid location. Looking at the prior disclosures, the user is black and has a girlfriend. Thus, the user is a black man with a girlfriend in sunnyvale. There are no implications needed, as data about race can be estimated with census data. Looking at the prior queries, there are no redundant information contained in the current span. <query>percentage of black people with girlfriends in Sunnyvale THAT are men aged 23 years old</query>
+
+**Example Prior Queries**:
+1. Population of the United States
+2. Percentage of people in the US that are parents
+
+**Example Dependent Prior Self-Disclosure Spans**:
+NONE
+
+**Example Current Self-Disclosure Span**:
+"my kid is in 7th grader"
+
+**Example Span Category**: education
+**Example Subreddit**: relationship_advice
+
+**Example Answer**: This user discloses that they have a kid in 7th grade. The prior disclosure indicates that they have a kid, which is shared in the current disclosure span. While it may be difficult to estimate the percentage of people in the exact grade level, this self-disclosure span implies that a child is in middle school related to the user. Looking at the prior queries, the percentage of people that are parents is already estimated. Thus, we should not estimate the total population being parents, but rather estimate the proportion of parents that have children in middle school. Thus, a feasible query derived from the implications of the disclosure span is <query>percentage of parents in the United States THAT have middle school-aged children</query>
+
+**Example Prior Queries**:
+1. Population of Salem
+2. Percentage of people that are renters
+
+**Example Dependent Prior Self-Disclosure Spans**:
+salem
+
+**Example Current Self-Disclosure Span**:
+"im currently looking for cheap apartments"
+
+**Example Span Category**: finance
+**Example Subreddit**: salem
+
+**Example Answer**: This user discloses that they are currently looking for cheap apartments in salem. It is not known that the percentage of people that look for cheap apartments, this self-disclosure span implies that the user is looking for apartments at a lower financial range than what may be the average. Looking at the prior queries, there is a query estimating the percentage of people that are renters, which is feasible. Thus, this query should look at the income level of the user. The implication from the span is pointing to the fact that the user is not in a high-income financial siatuaion. Instead, the user is likely lower income. This implication that the user is lower income is EASIER to estimate than the span of looking for cheap apartments. Thus, a feasible query derived from the implications of the disclosure span is <query>percentage of people in salem THAT are lower income</query>
+
+Please provide the implications with deep thinking, and formulate an EASILY searchable Google search query BY HUMANS about the poster. If humans must use multiple iterations of searching or finding niche or obscure databases to answer the query, then generalize the query to be easier. This search query must estimate the implications of the disclosure span. If the span is too specific, estimate the disclosure by generalizing it. You must generalize queries and simplify it.
+
+**Prior Queries**:
+{prior_query_list}
+
+**Prior Dependent Self-Disclosure Spans**:
+{prior_disclosure_list}
+
+**Current Self-Disclosure Span**:
+{self_disclosure_span}
+
+**Span Category**: {span_category}
+**Subreddit**: {subreddit}
+
+**Answer**:

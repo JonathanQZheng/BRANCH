@@ -1,0 +1,27 @@
+**Task**: Simplify the following Google Search query about self-disclosures.
+
+**Definition**:
+**Self-disclosure**: The act of intentionally sharing personal information about oneself with another person. This information is something that others generally wouldn't know without it being shared. Examples include static personal attributes such as name, age, and gender, or events an individual engages in over time, like health and education.
+
+**Instructions**:
+1. Review the following Google Search Query
+2. Reflect deeply and thoroughly on *ALL* of the aspects of the query and the ability to search these aspects online, and write down the specific/key (not general) IMPLICATIONS in a list format.
+3. Based on your listed implications, determine what edits can be made that does not severely change the query but makes it more easy to estimate with online statistics and data. Examples of these changes are to change the location of interest (e.g. from a city to the country) or to make a generalization of the self-disclosure.
+4. Return the simplified query in <query></query> tags.
+
+**Example Query**:
+percentage of Virginia Tech students that own two Corgis
+
+**Example Answer**: This query specifies Virginia Tech, and owning two Corgis. There are no online statistics for the percentage of people that own two pets, so this can be simplified. Additionally, individual dog breeds may be difficult to estimate, so the query can be simplified by generealizing the self-disclosure to dog owners. The simplified query is <query>percentage of Virginia Tech students that own dogs</query>
+
+**Example Query**:
+percentage of people in Sunnyvale that are divorced
+
+**Example Answer**: This query specifies percentage of people in Sunnyvale that are divorced. Individual city-wide statistics for marriage and divorce may be hard to obtain from online statistics. However, there are surveys and statistics for the national average of people that are married and divorced. Thus, the query can be simplified by broadening the location of interest. <query>percentage of people in the United States that are divorced</query>
+
+Please provide the implications with deep thinking, and formulate an simplified Google search query about the poster.
+
+**Query**:
+{query}
+
+**Answer**:

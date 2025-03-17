@@ -1,0 +1,55 @@
+**Task**: Generate a Google search query to determine the population of people that share this specific self-disclosure span.
+
+**Definition**:
+**Self-disclosure**: The act of intentionally sharing personal information about oneself with another person. This information is something that others generally wouldn't know without it being shared. Examples include static personal attributes such as name, age, and gender, or events an individual engages in over time, like health and education.
+Note: only information about the person posting (the "poster") is considered self-disclosure. Information about others is EXCLUDED.
+
+**k-anonymity**: Represents the number of people who possess that specific attribute or are in that specific situation. The generated search query should be aimed at understanding how many people have that particular characteristic, rather than a direct search of the span itself.
+
+**Instructions**:
+1. Carefully review the current Self-Disclosure Span(s). 
+2. Refer to the span category for clarity and additional information. For example, if the disclosure span is "education", this indicates that the user is a **STUDENT**.
+3. Refer to the subreddit name for potential information. If the subreddit is a location, note this and use it in the query.
+4. Consider the userbase of the particular subreddit. Is the subreddit used primarily by certain people, like students, children, adults? If so, utilize this specific information in your query by focusing on these people.
+5. Determine if the user is a new resident of a location. If so, this number is smaller than the actual population of that location, so include this assumption as well.
+6. Reflect deeply and thoroughly on *ALL* the information of the disclosure span implies for the poster, and write down the specific/key (not general) IMPLICATIONS in a list format.
+7. Based on your listed implications, formulate an accurate Google search query to yield the POPULATION or NUMBER of people that share the IMPLICATIONS or ATTRIBUTES of the current self-disclosure span. Include the location information given. Present this query within <query></query> tags.
+8. If there is no location provided for a certain population, note that the post is in English, so consider the population of interest as either the United States or the number of first-language English speakers.
+9. Be specific in your query.
+
+**Example Self-Disclosure Span(s)**:
+Cheyenne: location
+
+**Example Subreddit**: cheyenne
+
+**Example Answer**: This user lives in Cheyenne, and this is confirmed by the subreddit provided. Thus, the specific query to obtain the number of people that share this disclosure is the population of the city. There is not a specific type of people that tend to use this subreddit. <query>population of Cheyenne</query>
+
+**Example Self-Disclosure Span(s)**:
+Virginia Tech: education
+
+**Example Subreddit**: virginiatech
+
+**Example Answer**: This user is on the subreddit related to Virginia Tech. This subreddit is primarily used by students to ask about information related to the school. Thus, the specific query to obtain the number of people that share these disclosures is the number of total **STUDENTS** at Virginia Tech. <query>number of total students at Virginia Tech</query>
+
+**Example Self-Disclosure Span(s)**:
+just moved to Atlanta: location
+
+**Example Subreddit**: relationship_advice
+
+**Example Answer**: This user lives in Atlanta. Additionally, the user mentions that they moved to Atlanta recently, so the specific query to obtain the number of people that share this disclosure is the population of new residents in the city. We can use a framework of 5 years to get a more reasonable estimate of new residents. There is not a specific type of people that tend to use this subreddit. <query>number of new residents of Atlanta in the past five years</query>
+
+**Example Self-Disclosure Span(s)**:
+I'm a guy: gender
+
+**Example Subreddit**: mental_health
+
+**Example Answer**: This user is a guy. There is no location provided. Because the text is in English, we can assume that this person is in the English speaking world. The specific query to obtain the number of people that share this disclosure is the population of men in the United States. There is not a specific type of people that tend to use this subreddit. <query>number of men in the United States</query>
+
+Please provide the implications with deep thinking, and formulate an accurate Google search query about the poster.
+
+**Self-Disclosure Span(s)**:
+{self_disclosure_list}
+
+**Subreddit**: {subreddit} 
+
+**Answer**:

@@ -1,0 +1,65 @@
+**Task**: Determine if self-disclosures can be broken down into multiple queries for better estimation.
+
+**Definition**:
+**Self-disclosure**: The act of intentionally sharing personal information about oneself with another person. This information is something that others generally wouldn't know without it being shared. Examples include static personal attributes such as name, age, and gender, or events an individual engages in over time, like health and education.
+
+**Instructions**:
+1. Review the following Google Search Query
+2. Reflect deeply and thoroughly on *ALL* of the aspects of the query and the ability to search these aspects online, and write down the specific/key (not general) IMPLICATIONS in a list format.
+3. Determine if the following queries CONTAINS TWO SEPARATE, DISCRETE disclosure spans in the CONDITIONAL CLAUSE (e.g. "THAT are CS or Economics", etc.).
+4. Discrete disclosure spans in the conditional clause usually include the mention of the word "OR", where one disclosure is true or the other is true. If both or multiple are valid, then this is not a discrete disclosure span.
+5. There is a **CONDITIONAL CLAUSE** with the word "THAT". The presence of the word "OR" **MUST BE INSIDE** the conditional clause. That is, a discrete query that can be broken down will have the structure <... "THAT" ... OR ...>. Determine what the conditional clause is, and then detemrine if the word "OR" is in the **CONDITIONAL CLAUSE**. If it is, then the queries can be broken down. 
+6. If the word "or" comes **BEFORE** the conditional clause, **DO NOT** separate the query into multiple subqueries. The conditional clause **MUST CONTAIN** the word **OR**.
+7. **DO NOT BREAKDOWN** disclosure spans that are just lists separated by commas. These do not indicate that there is a hidden "OR" in the span.
+8. If there are two discrete spans in the conditional clause, break down the query into **TWO** subqueries that can be added up to estimate the original query.
+9. If the query **DOES NOT** have discrete spans, then it cannot be estimated by breaking down the query. **RETURN** the original query in <list></list> tags.
+10. Otherwise, return the new queries in a list with <list></list> tags. Surround each query in <answer></answer> tags. Determine the mathematical operation needed to be used to combine the subqueries into the original query, and return this in <math></math> tags.
+
+**Example Query**:
+percentage of women studying electrical engineering at MIT
+
+**Example Answer**: This query is asking for the number of percentage studying electrical engineering at MIT. There are mentions of women and studying electrical engineering, but there is no "OR" that indicates one or the other is true. Thus, there are no discrete disclosure spans. The query cannot be broken down.
+
+<list>
+<answer>percentage of women studying electrical engineering at MIT</answer>
+</list>
+
+
+**Example Query**:
+percentage of women or men that are doctors
+
+**Example Answer**: This query is asking for the percentage of women or men that are doctors. There is a "THAT" clause, so this is a conditional query. The conditional clause is "That are doctors". While "or" is in the query, there is no "OR" that indicates one or the other is true in the conditional clause. Thus, the query cannot be broken down.
+
+<list>
+<answer>percentage of women or men THAT are doctors</answer>
+</list>
+
+**Example Query**:
+percentage of students studying at virginia tech or georgia tech that are male
+
+**Example Answer**: This query is asking for the percentage of students studying at virginia tech or georgia tech that are male. There is a "THAT" clause, so this is a conditional query. The conditional clause is "that are male". "or" is in the query, BUT there is no "OR" in the conditional clause. Thus, the query cannot be broken down.
+
+<list>
+<answer>percentage of students studying at virginia tech or georgia tech that are male</answer>
+</list>
+
+
+**Example Query**:
+percentage of students that study business or psychology
+
+**Example Answer**: This query is asking for the percentage of students that get an internship at a UW. There is a word "that" in the clause, so this is a conditional query. The conditional clause is "that study business or psychology." There are mentions of either studying business or psychology in the conditional clause, so there is a "OR" in the conditional clause. Thus, one or the other may be valid. There are discrete disclosure spans, so this query can be broken down further into multiple subqueries.
+
+<list>
+<answer>percentage of students that study business</answer>
+<answer>percentage of students that study psychology</answer>
+</list>
+
+<math>Addition</math>
+
+
+Please provide the implications with deep thinking, and determine if the query needs to be broken down into subqueries.
+
+**Query**:
+{query}
+
+**Answer**:

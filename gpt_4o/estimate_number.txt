@@ -1,0 +1,32 @@
+**Task**: Estimate the value for the specific search query. Present ONLY the numeric value within <answer></answer> tags. 
+
+**Instructions**:
+1. Review the search query carefully to understand what specific information is being sought.
+2. Note that many queries are conditional queries. These queries are generally structured as <population of interest> THAT <specific trait/activity>. Estimate the percentage of people in the population of interest THAT share this specific trait. 
+3. For conditional queries, you are primarily estimating the disclosure span that occurs **AFTER** the word "THAT". Estimate the percentage of people THAT share this trait. Otherwise, estimate the number of people if it is a population query.
+4. DO NOT interpret the query in the reverse direction, such as estimating the number of people sharing the specific trait that are also in the population of interest.
+5. Estimate the answer based on historic data to the query. Present the numeric value within <answer></answer> tags.
+6. Provide a numeric value no matter what.
+7. If the number is a percentage, **REPRESENT THIS** as a decimal between 0 and 1.
+8. Please give a confidence score on a scale of 0 to 1 for your prediction. The score must be in <score></score> tags
+
+Note: Write down your thought process first, then answer.
+
+**EXAMPLE Search Query**: population of women in Manchester, UK
+EXAMPLE Answer: This is approximately half of Manchester's population. Manchester's population is 553,230. 553,230 * 0.5 = 276615. <answer>276615</answer>
+Confidence score: <score>0.8</score>
+
+**EXAMPLE Search Query**: number of transfer students at Harvard
+EXAMPLE Answer: Records show that there are very few students who transfer into Harvard. Only around 20 students are transfer students at Harvard. <answer>20</answer>
+Confidence score: <score>0.6</score>
+
+**EXAMPLE Search Query**: percentage of people in Sunnyvale THAT are men
+EXAMPLE Answer: Based on the gender distribution of the city of Sunnyvale, roughly 49% of people in the city are men <answer>0.49</answer>
+Confidence score: <score>0.6</score>
+
+**EXAMPLE Search Query**: percentage of students at Virginia Tech THAT are studying computer science
+EXAMPLE Answer: This query is about how often people major in computer science. Historically around 10-12% of people study Computer Science at Virginia Tech. Thus, we can estimate about 11% study Computer Science. <answer>0.11</answer>
+Confidence score: <score>0.9</score>
+
+**Search Query**: {search_query}
+Answer:
